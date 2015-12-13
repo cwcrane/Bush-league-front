@@ -1,60 +1,47 @@
-![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)
+#Bush League
 
-# Ember-starter
+This is the front end repo for Bush League.
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The back end repo is located here: https://github.com/cwcrane/bush-league-api
 
-## Prerequisites
+Bush league is an app for recreational sports teams to manage their league, team and players. It was designed first for hockey leagues, but the architecture of the app will allow for expansion into other sports down the line. Recreational sports need an app that will help with scheduling, stat tracking, payments to refs and team leaders, and just overall communication. 
 
-You will need the following things properly installed on your computer.
+##User Stories:
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+- As a user, I can create a league (you are admin if you do this)
+- As a user, I can request or invite to join league
+- As a user, I can create team (you are admin if you do this)
+- request or invite to join team
+- login/register
+- As league admin, I can set up schedule: create games between any teams
+- As team admin, I can report game results: Update game with goals for each team + player stats
+- As a Player, I can view standings: each team’s wins + losses.
+- As a player, I can view recent games.
+- As a player, I can view upcoming games.
+- As a player, I can view schedule.
+- As a player, I can view a player's stats.
 
-## Installation
+*Stretch features:*
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+- payment system
+- facebook login
+- League finder w/ map
 
-## Running / Development
+##Database Tables:
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+- Sports- hockey
+- locations
+- Leagues
+- teams
+- seasons (join table)
+- games
+- players/users
+- roster (join table)
+- player stats
 
-### Code Generators
+##Database Structure + Wireframe
+![Database structure + Wireframe](wireframe.png)
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
-[License](LICENSE)
-------------------
-
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+Corrections to attached data model image:
+1. Team has many leagues. Many-to-many. Season is the join table.
+2. Stats table: game has many stats. stats has one game.
