@@ -14,10 +14,10 @@
     </thead>
 
     <tbody>
-      {{#each model as |game|}}
+      {{#each model.games as |game|}}
       <tr>
-        <td>{{game.home_team_id}}</td>
-        <td>{{game.away_team_id}}</td>
+        <td>{{game.home_team_id.name}}</td>
+        <td>{{game.away_team_id.name}}</td>
         <td>{{game.home_goals}}</td>
         <td>{{game.away_goals}}</td>
         <td>{{game.date}}</td>

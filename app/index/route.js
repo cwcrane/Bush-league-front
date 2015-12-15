@@ -2,7 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(){
-		return this.store.findAll('game');
+		return {
+			games: this.store.findAll('game'),
+			teams: this.store.findAll('team')
+			//users: this.store.findAll('user')
+		}
 	},
 	renderTemplate: function() {
     this.render('games');
