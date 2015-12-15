@@ -1,0 +1,23 @@
+<h1>Roster</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Team</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each model.rosters as |roster|}}
+      <tr>
+        <td>{{roster.user_id.first_name}}</td>
+        <td>{{roster.team_id.name}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+</div>
+{{outlet}}

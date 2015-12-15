@@ -16,8 +16,8 @@
     <tbody>
       {{#each model.games as |game|}}
       <tr>
-        <td>{{game.home_team_id.name}}</td>
-        <td>{{game.away_team_id.name}}</td>
+        <td>{{#link-to 'rosters'}}{{game.home_team_id.name}}{{/link-to}}</td>
+        <td>{{#link-to 'rosters'}}{{game.away_team_id.name}}{{/link-to}}</td>
         <td>{{game.home_goals}}</td>
         <td>{{game.away_goals}}</td>
         <td>{{game.date}}</td>
@@ -28,5 +28,7 @@
 
   </table>
 </div>
+
+<h2>{{#link-to 'rosters'}}roster{{/link-to}}</h2>
 
 {{outlet}}
