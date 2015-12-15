@@ -29,6 +29,10 @@ export default Ember.Route.extend({
       //   generation.get('pokemon').addObject(newPokemon);
       //   newPokemon.save();
       // });
+		},
+		updateGame: function(gData){
+			console.log('hit the updateGame index route');
+			console.log(gData);
 		}
 	}
 });

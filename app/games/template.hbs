@@ -4,6 +4,7 @@
 
     <thead>
       <tr>
+        <th>edit</th>
         <th>Home Team</th>
         <th>Away Team</th>
         <th>Home Goals</th>
@@ -15,14 +16,7 @@
 
     <tbody>
       {{#each model.games as |game|}}
-      <tr>
-        <td>{{#link-to 'rosters'}}{{game.home_team_id.name}}{{/link-to}}</td>
-        <td>{{#link-to 'rosters'}}{{game.away_team_id.name}}{{/link-to}}</td>
-        <td>{{game.home_goals}}</td>
-        <td>{{game.away_goals}}</td>
-        <td>{{game.date}}</td>
-        <td>{{game.time}}</td>
-      </tr>
+          {{game-row game=game}}
       {{/each}}
     </tbody>
 
