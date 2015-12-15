@@ -1,5 +1,32 @@
 <h1>Games</h1>
-{{#each model as |game|}}
-<p>{{game.home_team_id}}</p>
-{{/each}}
+<div class="table-responsive">
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Home Goals</th>
+        <th>Away Goals</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each model as |game|}}
+      <tr>
+        <td>{{game.home_team_id}}</td>
+        <td>{{game.away_team_id}}</td>
+        <td>{{game.home_goals}}</td>
+        <td>{{game.away_goals}}</td>
+        <td>{{game.date}}</td>
+        <td>{{game.time}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+</div>
+
 {{outlet}}

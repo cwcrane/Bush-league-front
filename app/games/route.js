@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	// model: function(){
-	// 	return this.store.findAll('game');
-	// }
+	model: function(){
+		return this.store.findAll('game');
+	}
 });
 
 // return Ember.RSVP.hash({
