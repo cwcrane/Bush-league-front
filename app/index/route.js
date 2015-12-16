@@ -31,15 +31,30 @@ export default Ember.Route.extend({
       // });
 		},
 		createGame: function(newGame){
-			this.store.createRecord('game', newGame).save();
+			console.log('hit index route createGame');
+			console.log(newGame.home_team_id);
+			
+
+			//this.store.createRecord('game', newGame).save();
+			var nGame = this.store.createRecord('game', newGame);
+			var tId = this.store.findRecord('team', newGame.home_team_id).get('id');
+			nGame.set('home_team_id', tId);
+			nGame.save();
+			// then(function(team){
+   //       console.log(team.id);
+   //       nGame.set('home_team_id', team.id);
+   //       console.log(nGame.get('home_team_id'));
+   //       nGame.save();
+   //    });
+
 		},
 		updateGame: function(gData){
 			console.log('hit the updateGame index route');
 			console.log(gData.id);
-			console.log(gData.home_goals);
+			console.log(gData.get('home_goals'));
 			this.store.findRecord('game', gData.id).then(function(game) {
-			  //console.log(game);
-			  //game.set('home_goals', gData.home_goals);
+			//   console.log(game.get('home_goals'));
+			//   game.set('home_goals', gData.get('home_goals'));
 			  game.save();
 			});
 		},

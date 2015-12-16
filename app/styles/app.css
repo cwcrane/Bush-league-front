@@ -2,6 +2,17 @@
  * Base structure
  */
 
+#nbar {
+  background-color: IndianRed;
+  color: black;
+  font-size: 18px;
+}
+
+.gButton {
+  color: #42dca3;
+  background-color: #42dca3;
+}
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
@@ -24,6 +35,7 @@ body {
 .navbar-fixed-top {
   border: 0;
 }
+
 
 /*
  * Sidebar
