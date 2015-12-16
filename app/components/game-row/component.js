@@ -18,9 +18,10 @@ export default Ember.Component.extend({
       console.log('Component Action : updateGame');
       this.toggleProperty('isEditable');
       this.sendAction('routeUpdateGame', this.get('game'));
+    },
+    destroyGame: function(){
+      console.log('Component Action : destroyGame');
+      this.sendAction('routeDestroyGame', this.get('game'));
     }
-    // destroyPokemon: function(){
-    //   console.log('Component Action : destroyPokemon');
-    //   this.sendAction('routeDestroyPokemon', this.get('pokemon'));
-    }
+  }
 });

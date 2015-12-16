@@ -42,6 +42,12 @@ export default Ember.Route.extend({
 			  //game.set('home_goals', gData.home_goals);
 			  game.save();
 			});
-		}
+		},
+		destroyGame: function(game){
+      this.store.findRecord('game', game.get('id')).then(function(game){
+        game.destroyRecord();
+        console.log('record destroyed');
+      });
+    } 
 	}
 });
