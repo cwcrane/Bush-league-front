@@ -1,1 +1,23 @@
+<h1>Team</h1>
+<h3>Team Captain: {{model.teams.user_id.first_name}} {{team.user_id.last_name}}</h3>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Team</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      
+      <tr>
+        <td>{{model.teams.name}}</td>
+        <td>{{model.teams.user_id}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
 {{outlet}}
