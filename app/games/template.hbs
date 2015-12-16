@@ -15,9 +15,11 @@
     </thead>
 
     <tbody>
+      {{new-game routeCreateGame='createGame'}}
       {{#each model.games as |game|}}
           {{game-row game=game routeUpdateGame='updateGame'}}
       {{/each}}
+      
     </tbody>
 
   </table>

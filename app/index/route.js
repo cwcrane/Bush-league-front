@@ -30,10 +30,18 @@ export default Ember.Route.extend({
       //   newPokemon.save();
       // });
 		},
+		createGame: function(newGame){
+			this.store.createRecord('game', newGame).save();
+		},
 		updateGame: function(gData){
 			console.log('hit the updateGame index route');
 			console.log(gData.id);
-			//console.log(gData.home_goals);
+			console.log(gData.home_goals);
+			this.store.findRecord('game', gData.id).then(function(game) {
+			  //console.log(game);
+			  //game.set('home_goals', gData.home_goals);
+			  game.save();
+			});
 		}
 	}
 });
