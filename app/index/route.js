@@ -4,10 +4,10 @@ export default Ember.Route.extend({
 	model: function(){
 		return {
 			games: this.store.findAll('game'),
-			teams: this.store.findAll('team'),
-			users: this.store.findAll('user'),
-			rosters: this.store.findAll('roster')
-		}
+			teams: this.store.findAll('team')
+			//users: this.store.findAll('user'),
+			//rosters: this.store.findAll('roster')
+		};
 	},
 	renderTemplate: function() {
     this.render('games');
@@ -32,7 +32,8 @@ export default Ember.Route.extend({
 		},
 		updateGame: function(gData){
 			console.log('hit the updateGame index route');
-			console.log(gData);
+			console.log(gData.id);
+			//console.log(gData.home_goals);
 		}
 	}
 });

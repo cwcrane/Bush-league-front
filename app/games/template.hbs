@@ -16,7 +16,7 @@
 
     <tbody>
       {{#each model.games as |game|}}
-          {{game-row game=game}}
+          {{game-row game=game routeUpdateGame='updateGame'}}
       {{/each}}
     </tbody>
 
