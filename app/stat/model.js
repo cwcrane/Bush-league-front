@@ -6,5 +6,5 @@ export default DS.Model.extend({
   team_id: DS.belongsTo('team', {async: true}),
   goals: DS.attr('number'),
   assists: DS.attr('number'),
-  //penalty_mins: DS.attr('integer')
+  penalty_mins: DS.attr('number')
 });

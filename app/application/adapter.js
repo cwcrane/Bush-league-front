@@ -5,4 +5,5 @@ export default DS.RESTAdapter.extend({
 	headers: {
     'Content-Type': 'application/json'
   }
+
 });

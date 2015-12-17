@@ -11,6 +11,9 @@ export default Ember.Route.extend({
 			stats: this.store.findAll('stat')
 		};
 	}
+	//a user on a roster, has many stats. I want to find all the stats with a particular user_id. First just list them. Then, sum goals. 
+	//
+
 	// isOnTeam: function() {
 	//   return this.get('team_id') == "complete";
 	// }.property('status')

@@ -16,9 +16,9 @@
     </thead>
 
     <tbody>
-      {{new-game routeCreateGame='createGame'}}
+      {{new-game routeCreateGame='createGame' routeDestroyGame='deleteGame'}}
       {{#each model.games as |game|}}
-          {{game-row game=game routeUpdateGame='updateGame' routeDestroyGame='destroyGame'}}
+          {{game-row game=game routeUpdateGame='updateGame' routeDestroyGame='deleteGame'}}
       {{/each}}
 
     </tbody>
@@ -26,6 +26,6 @@
   </table>
 </div>
 
-<h2>{{#link-to 'rosters'}}roster{{/link-to}}</h2>
+{{!-- <h2>{{#link-to 'rosters'}}roster{{/link-to}}</h2> --}}
 
 {{outlet}}

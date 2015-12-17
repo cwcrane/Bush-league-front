@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 	},
 	actions: {
 		createGame: function(){
-      console.log('Component Action : create Game');
+      console.log('Component Action : created Game with values: ');
       this.sendAction('routeCreateGame', this.get('newGame'));
     }
 	}
