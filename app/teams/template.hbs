@@ -1,20 +1,21 @@
-<h1>Team</h1>
-<h3>Team Captain: {{model.teams.user_id.first_name}} {{team.user_id.last_name}}</h3>
+<h1>{{model.teams.name}}</h1>
+<h4>Captain: {{model.teams.user_id.first_name}} {{model.teams.user_id.last_name}}</h4>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Player</th>
-        <th>Team</th>
+        <th>First Name</th>
+        <th>Last Name</th>
       </tr>
     </thead>
 
     <tbody>
-      
+      {{#each model.teams.rosters as |player|}}
       <tr>
-        <td>{{model.teams.name}}</td>
-        <td>{{model.teams.user_id}}</td>
+        <td>{{player.user_id.first_name}}</td>
+        <td>{{player.user_id.last_name}}</td>
       </tr>
+      {{/each}}
 
     </tbody>
 

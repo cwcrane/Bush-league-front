@@ -8,10 +8,59 @@
   font-size: 18px;
 }
 
-.gButton {
+#gButton {
   color: #42dca3;
   background-color: #42dca3;
 }
+
+.btn1 {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.btn-default1 {
+    border: 1px solid #42dca3;
+    color: #42dca3;
+    background-color: transparent;
+}
+
+.btn-default1:hover,
+.btn-default1:focus {
+    border: 1px solid #42dca3;
+    outline: 0;
+    color: #000;
+    background-color: #42dca3;
+}
+
+.btn-default2 {
+    border: 1px solid RoyalBlue;
+    color: RoyalBlue;
+    background-color: transparent;
+}
+
+.btn-default2:hover,
+.btn-default2:focus {
+    border: 1px solid RoyalBlue;
+    outline: 0;
+    color: #000;
+    background-color: RoyalBlue;
+}
+
+.btn-default3:hover,
+.btn-default3:focus {
+    border: 1px solid IndianRed;
+    outline: 0;
+    color: #000;
+    background-color: IndianRed;
+}
+
+
+
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {

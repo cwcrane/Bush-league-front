@@ -35,11 +35,14 @@ export default Ember.Route.extend({
 			console.log(newGame.home_team_id);
 			
 
-			//this.store.createRecord('game', newGame).save();
-			var nGame = this.store.createRecord('game', newGame);
-			var tId = this.store.findRecord('team', newGame.home_team_id).get('id');
-			nGame.set('home_team_id', tId);
-			nGame.save();
+			var nGame = this.store.createRecord('game', newGame).save();
+			// var nGame = this.store.createRecord('game', newGame);
+			this.store.findRecord('team', newGame.home_team_id).then(function(team){
+				console.log(team);
+				team.get('home_games').addObject(nGame.get('id')).save();
+			});
+			// nGame.set('home_team_id', tId);
+			// nGame.save();
 			// then(function(team){
    //       console.log(team.id);
    //       nGame.set('home_team_id', team.id);
