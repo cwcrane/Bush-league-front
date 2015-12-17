@@ -1,0 +1,7 @@
+{
+  "buildCommand": "ember build",
+  "requireCleanWorkingDir": true,
+  "dist": {
+    "repo": "git@github.com:cwcrane/bush-league-front-deployed.git#gh-pages"
+  }
+}
