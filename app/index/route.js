@@ -10,10 +10,10 @@ export default Ember.Route.extend({
 			stats: this.store.findAll('stat')
 		};
 	},
-	// renderTemplate: function() {
- //    this.render('games');
- //    // this.render('games', {outlet: 'gamez'});
- //  },
+	renderTemplate: function() {
+    this.render('games');
+    // this.render('games', {outlet: 'gamez'});
+  },
 	actions: {
 		LoginUser: function(credentials){
 			console.log('loginUser hit index route');
@@ -31,42 +31,43 @@ export default Ember.Route.extend({
       //   newPokemon.save();
       // });
 		},
-		// createGame: function(newGame){
-		// 	console.log('hit index route createGame');
-		// 	console.log(newGame.home_team_id);
+		createGame: function(newGame){
+			console.log('hit index route createGame');
+			console.log(newGame.home_team_id);
 			
 
 			
-		// 	//this.store.createRecord('game', newGame).save();
-		// 	var self = this;
-		// 	var nGame = this.store.createRecord('game', newGame);
-		// 	debugger;
-		// 	nGame.save().then(function(savedGame){
-		// 		self.store.findRecord('team', newGame.home_team_id).then(function(hTeam){
-		// 			hTeam.get('home_games').pushObject(savedGame).save();
-		// 		});
-		// 		self.store.findRecord('team', newGame.away_team_id).then(function(aTeam){
-		// 			aTeam.get('away_games').pushObject(savedGame).save();
-		// 		});
-		// 	});
-			
+			//this.store.createRecord('game', newGame).save();
+			var self = this;
+			var nGame = this.store.createRecord('game', newGame);
+			//nGame.save();
+			nGame.save().then(function(savedGame){
+				debugger;
+				self.store.findRecord('team', newGame.home_team_id).then(function(hTeam){
+					hTeam.get('home_games').pushObject(savedGame).save();
+				});
+				self.store.findRecord('team', newGame.away_team_id).then(function(aTeam){
+					aTeam.get('away_games').pushObject(savedGame).save();
+				});
+			});
+		},
 
-		//},
-		// updateGame: function(gData){
-		// 	console.log('hit the updateGame index route');
-		// 	console.log(gData.id);
-		// 	console.log(gData.get('home_goals'));
-		// 	this.store.findRecord('game', gData.id).then(function(game) {
-		// 	//   console.log(game.get('home_goals'));
-		// 	//   game.set('home_goals', gData.get('home_goals'));
-		// 	  game.save();
-		// 	});
-		// },
-		// destroyGame: function(game){
-  //     this.store.findRecord('game', game.get('id')).then(function(game){
-  //       game.destroyRecord();
-  //       console.log('record destroyed');
-  //     });
-  //   } 
+		updateGame: function(gData){
+			console.log('hit the updateGame index route');
+			console.log(gData.id);
+			console.log(gData.get('home_goals'));
+			this.store.findRecord('game', gData.id).then(function(game) {
+			//   console.log(game.get('home_goals'));
+			//   game.set('home_goals', gData.get('home_goals'));
+			  game.save();
+			});
+		},
+
+		deleteGame: function(game){
+      this.store.findRecord('game', game.get('id')).then(function(game){
+        game.destroyRecord();
+        console.log('record destroyed');
+      });
+    } 
 	}
 });
