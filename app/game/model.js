@@ -6,5 +6,6 @@ export default DS.Model.extend({
   home_goals: DS.attr('number'),
   away_goals: DS.attr('number'),
   date: DS.attr('string'),
-  time: DS.attr('string')
+  time: DS.attr('string'),
+  player_stats: DS.hasMany('player_stat', {async: true})
 });

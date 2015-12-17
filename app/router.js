@@ -11,13 +11,14 @@ Router.map(function() {
   });
 
   // this.route('teams', function(){ 
-  // 	this.route('/:team_id')
+  //  this.route('/:team_id')
   // });
-	this.route('teams', {path: '/teams/:team_id'});
+  this.route('teams', {path: '/teams/:team_id'});
 
   this.route('rosters', function(){ 
   	this.route('/:roster_id')
   });
+  this.route('player_stats');
 });
 
 export default Router;

@@ -7,7 +7,8 @@ export default Ember.Route.extend({
 			users: this.store.findAll('user'),
 			games: this.store.findAll('game'),
 			teams: this.store.findRecord('team', params.team_id),
-			rosters: this.store.findAll('roster')
+			rosters: this.store.findAll('roster'),
+			stats: this.store.findAll('stat')
 		};
 	}
 	// isOnTeam: function() {
